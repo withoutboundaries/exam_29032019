@@ -9,9 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchResultsPage extends BasePage{
+public class SearchResultsPage extends BasePage {
 
-    @FindBy(xpath ="//div[@class='g']")
+    @FindBy(xpath = "//div[@class='g']")
     List<WebElement> searchResultElements;
 
     @FindBy(xpath = "//input[@class='gLFyf gsfi']")
@@ -21,7 +21,7 @@ public class SearchResultsPage extends BasePage{
     @FindBy(xpath = "//a[@aria-label='Page 2']")
     private WebElement page2Button;
 
-    public SearchResultsPage (WebDriver driver) {
+    public SearchResultsPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -46,9 +46,9 @@ public class SearchResultsPage extends BasePage{
     }
 
 
-    public SearchResultsSecondPage goTo2SearchPage (){
+    public SearchResultsSecondPage goTo2SearchPage() {
         page2Button.click();
-        return new SearchResultsSecondPage (driver);
+        return new SearchResultsSecondPage(driver);
     }
 
 
