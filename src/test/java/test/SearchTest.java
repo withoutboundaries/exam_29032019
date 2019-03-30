@@ -9,13 +9,17 @@ import page.SearchResultsSecondPage;
 import java.util.List;
 
 public class SearchTest extends BaseTest {
+
+
     @Test
-    public void successfulSearchTest (){
-        String searchTerm="Selenium";
+    public void successfulSearchTest() {
 
-        Assert.assertTrue(landingPage.isPageLoaded(), "Landing page is not loaded");
 
-        SearchResultsPage searchResultsPage=landingPage.input();
+        String searchTerm = "Selenium";
+
+        Assert.assertTrue(startPage.isPageLoaded(), "Start page is not loaded");
+
+        SearchResultsPage searchResultsPage = startPage.input();
         Assert.assertTrue(searchResultsPage.isPageLoaded(), "Search Results page is not loaded");
 
         Assert.assertEquals(searchResultsPage.getSearchResultCount(), 9,
@@ -24,10 +28,10 @@ public class SearchTest extends BaseTest {
         List<String> searchResultsList = searchResultsPage.getSearchResultsList();
         for (String searchResult : searchResultsList) {
             Assert.assertTrue(searchResult.toLowerCase().contains(searchTerm.toLowerCase()),
-                    "SearchTerm: "+searchTerm+" not fount in: \n"+searchResult);
+                    "SearchTerm: " + searchTerm + " not fount in: \n" + searchResult);
         }
 
-        SearchResultsSecondPage searchResultsSecondPage=searchResultsPage.goTo2SearchPage();
+        SearchResultsSecondPage searchResultsSecondPage = searchResultsPage.goTo2SearchPage();
         Assert.assertTrue(searchResultsSecondPage.isPageLoaded(), "Search Results Second page is not loaded");
 
         Assert.assertEquals(searchResultsSecondPage.getSearchResultCount(), 10,
@@ -36,8 +40,9 @@ public class SearchTest extends BaseTest {
         List<String> searchResultsListSecondPage = searchResultsSecondPage.getSearchResultsList();
         for (String searchResult : searchResultsList) {
             Assert.assertTrue(searchResult.toLowerCase().contains(searchTerm.toLowerCase()),
-                    "SearchTerm: "+searchTerm+" not fount in: \n"+searchResult);
+                    "SearchTerm: " + searchTerm + " not fount in: \n" + searchResult);
         }
 
     }
+
 }

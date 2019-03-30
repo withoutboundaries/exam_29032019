@@ -13,11 +13,11 @@ public class SearchResultsSecondPage extends BasePage {
     @FindBy(xpath = "//input[@class='gLFyf gsfi']")
     private WebElement searchResultsFieldSecondPage;
 
-    @FindBy(xpath ="//div[@class='g']")
+    @FindBy(xpath = "//div[@class='g']")
     List<WebElement> searchResultElementsSecondPage;
 
 
-    public SearchResultsSecondPage (WebDriver driver) {
+    public SearchResultsSecondPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

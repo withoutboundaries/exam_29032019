@@ -4,22 +4,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import page.LandingPage;
+import page.StartPage;
 
 public class BaseTest {
     WebDriver driver;
-  LandingPage landingPage;
+    StartPage startPage;
 
 
     /**
-     * beforeTest is a method used before running all tests in all Sublasses of this project. This method always opens new driver and page LandingPage
+     * beforeTest is a method used before running all tests in all Sublasses of this project. This method always opens new driver and page StartPage
      */
     @BeforeMethod
     public void beforeTest() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\gnatyshko_i\\IdeaProjects\\exam_29032019\\chromedriver.exe");
-        driver= new ChromeDriver();
+        driver = new ChromeDriver();
         driver.get("https://www.google.com/");
-        landingPage = new LandingPage(driver);
+        startPage = new StartPage(driver);
 
     }
 

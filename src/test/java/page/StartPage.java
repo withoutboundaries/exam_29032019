@@ -5,18 +5,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LandingPage extends BasePage {
+public class StartPage extends BasePage {
 
     @FindBy(xpath = "//input[@name='q']")
     private WebElement searchField;
 
     @FindBy(xpath = "//input[@name='btnK']")
     private WebElement searchButton;
-    String searchTerm="Selenium";
+    String searchTerm = "Selenium";
 
-    public LandingPage (WebDriver driver) {
+    public StartPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        waitUntilElementIsVisible(searchField, 5);
     }
 
     public boolean isPageLoaded() {
@@ -24,12 +25,11 @@ public class LandingPage extends BasePage {
                 && driver.getCurrentUrl().contains("https://www.google.com/");
     }
 
-public SearchResultsPage input (){
-    searchField.sendKeys(searchTerm);
-    searchButton.click();
-    return new SearchResultsPage (driver);
-}
-
+    public SearchResultsPage input() {
+        searchField.sendKeys(searchTerm);
+        searchButton.click();
+        return new SearchResultsPage(driver);
+    }
 
 
 }
