@@ -8,10 +8,10 @@ In the test package are located 2 classes: BaseTest which is subclassed by Searc
 
 In order to run the project's tests the following needs to be installed:
 
-Google Chrome browser (latest version)
-JDK 1.8 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-Intellij IDEA (Community version) https://www.jetbrains.com/idea/download/
-Chromedriver.exe (http://chromedriver.chromium.org/downloads)
+1. Google Chrome browser (latest version)
+2. JDK 1.8 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+3. Intellij IDEA (Community version) https://www.jetbrains.com/idea/download/
+4. Chromedriver.exe (http://chromedriver.chromium.org/downloads)
 Tests in SearchTest should be run one by one because every next test depends on the previous one. For running the tests click on 'Run Test' (green triangle) in the class SearchTest.
 
 The test are successfully passed, but sometimes slow speed of the Internet may be the reason of tests' failure because some Webelements may need more time to be loaded. In such case please add 'wait' method for several seconds (see example in the Constructor of the class StartPage).
