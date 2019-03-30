@@ -1,4 +1,4 @@
-exam_29032019 is a project with a simple goal: to verify whether the word "Selenium" is found on the first 2 pages in google.com (browser Chrome).
+exam_29032019 is a project with a simple goal: to verify whether the word "Selenium" is found  in google.com (browser Chrome) on the first 2 pages.
 
 In order to achieve this goal 2 packages were created: page and test.
 
